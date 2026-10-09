@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    padding: 0 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+main {
+    padding-top: 60px;
+}
+
+.logo img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.hamburger-menu {
+    position: relative;
+    width: 35px;
+    height: 29px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamburger-menu::before {
+    top: 5px;
+    box-shadow: 0 8px 0 #ffffff;
+}
+
+.hamburger-menu::after {
+    top: 21px;
+}
+
+.hamburger-menu[aria-expanded="true"]::before {
+    transform: translateY(8px) rotate(45deg);
+    box-shadow: 0 0 0 #ffffff;
+}
+
+.hamburger-menu[aria-expanded="true"]::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 60px);
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, #333333 0%, rgba(51, 51, 51, 0.55) 100%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+}
+
+nav[hidden] {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a,
+.nav-label {
+    display: block;
+    padding: 14px 24px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav .nav-sub a {
+    padding-left: 56px;
+    font-weight: 400;
+}
+
+.cookie-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    gap: 30px;
+    z-index: 1000;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cookie-text {
+    flex: 1;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.cookie-text h3 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.cookie-text p {
+    margin-bottom: 0;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-cookie {
+    padding: 10px 22px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-preferences {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-preferences:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-decline {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+
+.btn-decline:hover {
+    background-color: #dcdcdc;
+}
+
+.btn-accept {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.btn-accept:hover {
+    background-color: #e6e6e6;
+}
+
+@media (max-width: 900px) {
+    .cookie-overlay {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookie-buttons {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .btn-cookie {
+        width: 100%;
+        text-align: center;
+    }
+}
