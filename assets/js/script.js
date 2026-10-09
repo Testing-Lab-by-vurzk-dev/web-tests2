@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const menuButton = document.querySelector('.hamburger-menu');
     const nav = document.getElementById('main-nav');
 
@@ -35,6 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = event.target.closest('button, .btn, .action');
         if (!target) return;
 
+        const isPageLink =
+            !reducedMotion &&
+            target.matches('a[href]') &&
+            !target.getAttribute('href').startsWith('#') &&
+            target.target !== '_blank' &&
+            !event.ctrlKey && !event.metaKey && !event.shiftKey;
+
+        if (isPageLink) {
+            event.preventDefault();
+            setTimeout(() => { window.location.href = target.href; }, 300);
+        }
+
         target.classList.remove('is-popping');
         void target.offsetWidth;
         target.classList.add('is-popping');
@@ -66,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hero = document.querySelector('.hero');
     const heroInner = document.querySelector('.hero-inner');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (hero && heroInner && !reducedMotion) {
         let waiting = false;
