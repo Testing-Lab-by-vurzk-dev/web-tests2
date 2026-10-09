@@ -20,6 +20,72 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    document.querySelectorAll('.nav-label').forEach((label) => {
+        const panel = document.getElementById(label.getAttribute('aria-controls'));
+        if (!panel) return;
+
+        label.addEventListener('click', () => {
+            const open = label.getAttribute('aria-expanded') !== 'true';
+            label.setAttribute('aria-expanded', String(open));
+            panel.classList.toggle('is-open', open);
+        });
+    });
+
+    document.addEventListener('click', (event) => {
+        const target = event.target.closest('button, .btn, .action');
+        if (!target) return;
+
+        target.classList.remove('is-popping');
+        void target.offsetWidth;
+        target.classList.add('is-popping');
+
+        const done = (animationEvent) => {
+            if (animationEvent.animationName !== 'pop') return;
+            target.classList.remove('is-popping');
+            target.removeEventListener('animationend', done);
+        };
+        target.addEventListener('animationend', done);
+    });
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach((item) => observer.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+
+    const hero = document.querySelector('.hero');
+    const heroInner = document.querySelector('.hero-inner');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (hero && heroInner && !reducedMotion) {
+        let waiting = false;
+
+        const updateHeroFade = () => {
+            const progress = Math.min(window.scrollY / (hero.offsetHeight * 0.7), 1);
+            heroInner.style.opacity = String(1 - progress);
+            heroInner.style.transform = `translateY(${progress * -40}px)`;
+            waiting = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!waiting) {
+                waiting = true;
+                requestAnimationFrame(updateHeroFade);
+            }
+        }, { passive: true });
+    }
+
     document.addEventListener('cookie-settings-open', () => {
         console.log('Cookie settings opened');
     });
