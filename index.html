@@ -4,55 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CofySoft official site">
-    <title>CofySoft</title>
+    <meta name="description" content="Cofysoft official site">
+    <title>Cofysoft</title>
     <link rel="icon" type="image/png" href="assets/img/CofySoftfavicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/consent-manager.js" defer></script>
+    <noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
     <header>
         <a href="/" class="logo">
           <!-- logo no temrinado con tamaño ya que n otengo el logo aun -->
-            <img src="assets/img/CofySofticon.png" alt="CofySoft Home" width="100" height="30">
+            <img src="assets/img/CofySofticon.png" alt="Cofysoft Home" width="100" height="30">
         </a>
         <button class="hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"></button>
         <nav id="main-nav" aria-label="Main" hidden>
             <ul>
                 <li><a href="/join">Join us</a></li>
                 <li>
-                    <span class="nav-label">Our Products</span>
-                    <ul class="nav-sub">
-                        <li><a href="/products/website-development">Website Development</a></li>
-                        <li><a href="/products/game-development">Game Development</a></li>
-                    </ul>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-products">Our Products</button>
+                    <div class="nav-sub" id="sub-products">
+                        <ul>
+                            <li><a href="/products/website-development">Website Development</a></li>
+                            <li><a href="/products/game-development">Game Development</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
-                    <span class="nav-label">Games</span>
-                    <ul class="nav-sub">
-                        <li><a href="#">Null</a></li>
-                        <li><a href="#">Null</a></li>
-                    </ul>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-games">Games</button>
+                    <div class="nav-sub" id="sub-games">
+                        <ul>
+                            <li><a href="#">Null</a></li>
+                            <li><a href="#">Null</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li><a href="/contact">Contact us</a></li>
                 <li><a href="/about">About</a></li>
                 <li>
-                    <span class="nav-label">Languages</span>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-languages">Languages</button>
                   <!-- aqui los idiomas usamks xmls, ya que no voy a escribir la traduccion en el html o de otra forma -->
-                    <ul class="nav-sub">
-                        <li><a href="/en-gb/" lang="en-GB" hreflang="en-GB">English (UK)</a></li>
-                        <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
-                        <li><a href="/pt/" lang="pt" hreflang="pt">Português</a></li>
-                        <li><a href="/ru/" lang="ru" hreflang="ru">Русский</a></li>
-                        <li><a href="/zh/" lang="zh" hreflang="zh">中文</a></li>
-                        <li><a href="/de/" lang="de" hreflang="de">Deutsch</a></li>
-                        <li><a href="/ja/" lang="ja" hreflang="ja">日本語</a></li>
-                    </ul>
+                    <div class="nav-sub" id="sub-languages">
+                        <ul>
+                            <li><a href="/en-gb/" lang="en-GB" hreflang="en-GB">English (UK)</a></li>
+                            <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
+                            <li><a href="/hi/" lang="hi" hreflang="hi">हिन्दी</a></li>
+                            <!-- <li><a href="/pt/" lang="pt" hreflang="pt">Português</a></li> -->
+                            <!-- <li><a href="/ru/" lang="ru" hreflang="ru">Русский</a></li> -->
+                            <!-- <li><a href="/zh/" lang="zh" hreflang="zh">中文</a></li> -->
+                            <!-- <li><a href="/de/" lang="de" hreflang="de">Deutsch</a></li> -->
+                            <!-- <li><a href="/ja/" lang="ja" hreflang="ja">日本語</a></li> -->
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <main id="main"></main>
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <p class="eyebrow glitch" data-text="Crafting Games. Creating Solutions." data-reveal>Crafting Games. Creating Solutions.</p>
+                <h1 id="hero-title" data-reveal>Bringing Ideas to Life <span class="neon">Through Code</span></h1>
+                <p class="hero-text" data-reveal>We are a growing Colombian software development studio founded by a team of developers from around the world. We specialise in web development and game development, creating imaginative, engaging, and colourful games alongside innovative digital experiences designed to bring ideas to life.</p>
+                <a class="btn" href="#work" data-reveal>Explore Our Work</a>
+                <div class="hero-actions" data-reveal>
+                    <a class="action action-primary" href="#work">
+                        <span>Explore Our Work</span>
+                        <span class="arrow" aria-hidden="true">↓</span>
+                    </a>
+                    <a class="action action-secondary" href="/contact">
+                        <span>Contact Us</span>
+                        <span class="arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
