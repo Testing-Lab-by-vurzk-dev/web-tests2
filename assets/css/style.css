@@ -5,6 +5,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+    --accent: #f26f3a;
+    --hero-bg: #26272c;
+    --text-muted: #c9c9cf;
+}
+
 body {
     background-color: #f5f5f5;
 }
@@ -97,8 +103,7 @@ nav ul {
     list-style: none;
 }
 
-nav a,
-.nav-label {
+nav a {
     display: block;
     padding: 14px 24px;
     color: #ffffff;
@@ -107,13 +112,282 @@ nav a,
     text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover,
+.nav-label:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.nav-label::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.nav-label[aria-expanded="true"]::after {
+    transform: translateY(2px) rotate(-135deg);
+}
+
+.nav-sub {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.3s ease, visibility 0.3s;
+}
+
+.nav-sub.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+}
+
+.nav-sub > ul {
+    min-height: 0;
+    overflow: hidden;
 }
 
 nav .nav-sub a {
     padding-left: 56px;
     font-weight: 400;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - 60px);
+    padding: 60px clamp(20px, 6vw, 80px);
+    background:
+        linear-gradient(rgba(38, 39, 44, 0.55), rgba(38, 39, 44, 0.85)),
+        url('../img/BkgCofysoft_08102026.png') center / cover no-repeat,
+        var(--hero-bg);
+    overflow: hidden;
+}
+
+.hero-inner {
+    width: 100%;
+    max-width: 900px;
+    will-change: opacity, transform;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-size: clamp(1.1rem, 4vw, 1.9rem);
+    font-weight: 700;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 9vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-text {
+    max-width: 640px;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: #1b1b1f;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 0.2s;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+.hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 760px;
+    margin-top: 56px;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    min-height: 120px;
+    padding: 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: filter 0.2s, background-color 0.2s;
+}
+
+.action-primary {
+    background-color: var(--accent);
+    color: #1b1b1f;
+}
+
+.action-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+}
+
+.action-primary:hover {
+    filter: brightness(1.1);
+}
+
+.action-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.arrow {
+    font-size: 1.4rem;
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 0 100% 0);
+}
+
+.glitch::before {
+    text-shadow: -2px 0 #00e5ff;
+    animation: glitch-a 3s infinite linear;
+}
+
+.glitch::after {
+    text-shadow: 2px 0 #ff2a6d;
+    animation: glitch-b 2.4s infinite linear;
+}
+
+@keyframes glitch-a {
+    0%, 82%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    85% { clip-path: inset(15% 0 60% 0); transform: translate(-3px, 0); }
+    90% { clip-path: inset(60% 0 12% 0); transform: translate(3px, 0); }
+    95% { clip-path: inset(35% 0 40% 0); transform: translate(-2px, 0); }
+}
+
+@keyframes glitch-b {
+    0%, 78%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    82% { clip-path: inset(70% 0 5% 0); transform: translate(3px, 0); }
+    88% { clip-path: inset(10% 0 70% 0); transform: translate(-3px, 0); }
+    94% { clip-path: inset(45% 0 30% 0); transform: translate(2px, 0); }
+}
+
+.neon {
+    color: #fff3ec;
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 14px var(--accent),
+        0 0 30px var(--accent),
+        0 0 60px var(--accent);
+    animation: neon-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow:
+            0 0 4px rgba(255, 255, 255, 0.7),
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            0 0 38px var(--accent);
+    }
+    to {
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 16px var(--accent),
+            0 0 34px var(--accent),
+            0 0 70px var(--accent);
+    }
+}
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.hero-inner > :nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.hero-inner > :nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.hero-inner > :nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.hero-inner > :nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.is-popping {
+    animation: pop 0.35s ease-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    35% { transform: scale(0.95); }
+    70% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch::before,
+    .glitch::after {
+        display: none;
+    }
+
+    .neon,
+    .is-popping {
+        animation: none;
+    }
+
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .cookie-overlay {
