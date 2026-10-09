@@ -209,25 +209,67 @@ nav .nav-sub a {
     line-height: 1.5;
 }
 
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 999px;
-    background-color: var(--accent);
-    color: #1b1b1f;
-    font-size: 0.95rem;
-    font-weight: 600;
+.btn,
+.action {
+    --radius: 6px;
+    position: relative;
+    border-radius: var(--radius);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
     transition: filter 0.2s;
 }
 
-.btn:hover {
-    filter: brightness(1.1);
+.btn::before,
+.action::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: calc(var(--radius) - 2px);
+    pointer-events: none;
+}
+
+.btn:hover,
+.action:hover {
+    filter: brightness(1.12);
+}
+
+.btn,
+.action-primary {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 55%) top / 100% 55% no-repeat,
+        linear-gradient(#ff9a3c, #ff8a1f 50%, #f06a00);
+    box-shadow:
+        0 8px 22px rgba(255, 138, 31, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.action-secondary {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 55%) top / 100% 55% no-repeat,
+        linear-gradient(#4a4a4a, #1c1c1c 50%, #000000);
+    box-shadow:
+        0 8px 22px rgba(255, 255, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    --radius: 999px;
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.95rem;
 }
 
 .hero-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 16px;
     max-width: 760px;
     margin-top: 56px;
 }
@@ -240,30 +282,6 @@ nav .nav-sub a {
     min-height: 120px;
     padding: 24px;
     font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: filter 0.2s, background-color 0.2s;
-}
-
-.action-primary {
-    background-color: var(--accent);
-    color: #1b1b1f;
-}
-
-.action-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #ffffff;
-}
-
-.action-primary:hover {
-    filter: brightness(1.1);
-}
-
-.action-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .arrow {
@@ -273,6 +291,7 @@ nav .nav-sub a {
 .glitch {
     position: relative;
     display: inline-block;
+    animation: glitch-main 2.2s infinite linear;
 }
 
 .glitch::before,
@@ -284,53 +303,81 @@ nav .nav-sub a {
 }
 
 .glitch::before {
-    text-shadow: -2px 0 #00e5ff;
-    animation: glitch-a 3s infinite linear;
+    color: #00e5ff;
+    animation: glitch-a 2.2s infinite linear;
 }
 
 .glitch::after {
-    text-shadow: 2px 0 #ff2a6d;
-    animation: glitch-b 2.4s infinite linear;
+    color: #ff2a6d;
+    animation: glitch-b 2.2s infinite linear;
+}
+
+@keyframes glitch-main {
+    0%, 9%, 27%, 57%, 77%, 100% { transform: none; }
+    11% { transform: translate(-3px, 0) skewX(-8deg); }
+    15% { transform: translate(3px, 1px) skewX(6deg); }
+    19% { transform: translate(-2px, -1px); }
+    23% { transform: translate(2px, 0) skewX(-4deg); }
+    60% { transform: translate(3px, 0) skewX(7deg); }
+    64% { transform: translate(-3px, 1px) skewX(-6deg); }
+    68% { transform: translate(2px, 0); }
+    72% { transform: translate(-2px, -1px) skewX(4deg); }
 }
 
 @keyframes glitch-a {
-    0%, 82%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
-    85% { clip-path: inset(15% 0 60% 0); transform: translate(-3px, 0); }
-    90% { clip-path: inset(60% 0 12% 0); transform: translate(3px, 0); }
-    95% { clip-path: inset(35% 0 40% 0); transform: translate(-2px, 0); }
+    0%, 9%, 27%, 57%, 77%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    11% { clip-path: inset(10% 0 70% 0); transform: translate(-6px, 0); }
+    15% { clip-path: inset(55% 0 20% 0); transform: translate(6px, 0); }
+    19% { clip-path: inset(30% 0 45% 0); transform: translate(-4px, 0); }
+    23% { clip-path: inset(75% 0 5% 0); transform: translate(7px, 0); }
+    60% { clip-path: inset(20% 0 55% 0); transform: translate(-6px, 0); }
+    64% { clip-path: inset(65% 0 10% 0); transform: translate(6px, 0); }
+    68% { clip-path: inset(40% 0 35% 0); transform: translate(-5px, 0); }
+    72% { clip-path: inset(5% 0 80% 0); transform: translate(5px, 0); }
 }
 
 @keyframes glitch-b {
-    0%, 78%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
-    82% { clip-path: inset(70% 0 5% 0); transform: translate(3px, 0); }
-    88% { clip-path: inset(10% 0 70% 0); transform: translate(-3px, 0); }
-    94% { clip-path: inset(45% 0 30% 0); transform: translate(2px, 0); }
+    0%, 9%, 27%, 57%, 77%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    12% { clip-path: inset(60% 0 15% 0); transform: translate(6px, 0); }
+    16% { clip-path: inset(15% 0 65% 0); transform: translate(-6px, 0); }
+    20% { clip-path: inset(45% 0 30% 0); transform: translate(5px, 0); }
+    24% { clip-path: inset(5% 0 80% 0); transform: translate(-7px, 0); }
+    61% { clip-path: inset(70% 0 5% 0); transform: translate(6px, 0); }
+    65% { clip-path: inset(25% 0 50% 0); transform: translate(-6px, 0); }
+    69% { clip-path: inset(50% 0 25% 0); transform: translate(5px, 0); }
+    73% { clip-path: inset(10% 0 75% 0); transform: translate(-5px, 0); }
 }
 
 .neon {
-    color: #fff3ec;
-    text-shadow:
+    --neon-core: #fff3ec;
+    --neon-glow:
         0 0 6px rgba(255, 255, 255, 0.9),
         0 0 14px var(--accent),
         0 0 30px var(--accent),
         0 0 60px var(--accent);
-    animation: neon-pulse 3s ease-in-out infinite alternate;
+    --neon-off-core: #86675a;
+    --neon-off-glow:
+        0 0 0 transparent,
+        0 0 0 transparent,
+        0 0 0 transparent,
+        0 0 0 transparent;
+    color: var(--neon-core);
+    text-shadow: var(--neon-glow);
+    animation: neon-flicker 6s linear infinite;
 }
 
-@keyframes neon-pulse {
-    from {
-        text-shadow:
-            0 0 4px rgba(255, 255, 255, 0.7),
-            0 0 10px var(--accent),
-            0 0 20px var(--accent),
-            0 0 38px var(--accent);
+@keyframes neon-flicker {
+    0%, 2%, 4.5%, 6%, 8%, 92.5%, 93.5%, 95.5% {
+        color: var(--neon-off-core);
+        text-shadow: var(--neon-off-glow);
     }
-    to {
-        text-shadow:
-            0 0 6px rgba(255, 255, 255, 0.9),
-            0 0 16px var(--accent),
-            0 0 34px var(--accent),
-            0 0 70px var(--accent);
+    2.5%, 4%, 6.5%, 7.5%, 8.5%, 92%, 94%, 95%, 96%, 100% {
+        color: var(--neon-core);
+        text-shadow: var(--neon-glow);
+    }
+    10%, 90% {
+        color: var(--neon-core);
+        text-shadow: var(--neon-glow);
     }
 }
 
@@ -361,6 +408,98 @@ nav .nav-sub a {
     transition-delay: 0.4s;
 }
 
+.process {
+    padding: 80px clamp(20px, 6vw, 80px);
+    background-color: var(--hero-bg);
+    scroll-margin-top: 60px;
+}
+
+.process-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.process h2 {
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: 800;
+    text-align: center;
+}
+
+.process h2 span {
+    color: var(--accent);
+}
+
+.process-intro {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2.4vw, 1.15rem);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.step {
+    padding: 28px 24px;
+    border: 1px solid rgba(242, 111, 58, 0.45);
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.step-number {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.step[data-reveal] {
+    transform: translateY(40px) scale(0.85);
+}
+
+.step[data-reveal].is-visible {
+    transform: none;
+}
+
+.process-grid > :nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.process-grid > :nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.process-grid > :nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 .is-popping {
     animation: pop 0.35s ease-out;
 }
@@ -378,6 +517,7 @@ nav .nav-sub a {
         display: none;
     }
 
+    .glitch,
     .neon,
     .is-popping {
         animation: none;
