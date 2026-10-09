@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (event) => {
-        const target = event.target.closest('button, .btn, .action');
+        const target = event.target.closest('button:not(.nav-label):not(.faq-question), .btn, .action');
         if (!target) return;
 
         const isPageLink =
@@ -65,10 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
+                entry.target.classList.toggle('is-visible', entry.isIntersecting);
             });
         }, { threshold: 0.15 });
 
@@ -97,6 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
     }
+
+    document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', () => question.classList.toggle('is-open'));
+    });
 
     document.addEventListener('cookie-settings-open', () => {
         console.log('Cookie settings opened');
