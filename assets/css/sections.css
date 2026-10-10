@@ -69,7 +69,7 @@
     text-align: center;
 }
 
-.process h2 span {
+.process h2 .accent {
     background: linear-gradient(90deg, var(--accent), var(--tangerine), var(--pastel-purple));
     -webkit-background-clip: text;
     background-clip: text;
@@ -292,7 +292,7 @@
     color: var(--tangerine);
 }
 
-.faq-footer a span {
+.faq-footer a [aria-hidden="true"] {
     color: var(--tangerine);
 }
 
@@ -309,22 +309,24 @@
 }
 
 .vip-inner {
-    max-width: 760px;
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .vip-text {
-    margin: 0 auto 12px;
+    max-width: 640px;
+    margin: 0 0 32px;
 }
 
 .vip-note {
-    margin: 0 auto 32px;
+    margin: 24px 0 0;
     color: #9a9aa3;
     font-size: 0.85rem;
 }
 
-.page-body {
+.page-body,
+.footer {
     background:
         linear-gradient(rgba(38, 39, 44, 0.82), rgba(38, 39, 44, 0.92)),
         url('../img/BkgCofysoftv3.jpg') center top / cover no-repeat,

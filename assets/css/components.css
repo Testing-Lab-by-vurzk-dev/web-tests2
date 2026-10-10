@@ -69,3 +69,46 @@
 .arrow {
     font-size: 1.4rem;
 }
+
+.tip {
+    position: fixed;
+    top: calc(var(--header-height) + 12px);
+    left: 50%;
+    z-index: 990;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: min(560px, calc(100% - 24px));
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: linear-gradient(#b7e04a, #a2d437);
+    color: #1f2a0c;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translate(-50%, -12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+.tip.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+.tip-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+}
+
+.tip-title {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+}
+
+.tip-text {
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
