@@ -1,16 +1,24 @@
+import { t } from './i18n.js';
+
 export function initNavigation() {
     const menuButton = document.querySelector('.hamburger-menu');
     const nav = document.getElementById('main-nav');
     if (!menuButton || !nav) return;
 
+    const syncLabel = () => {
+        const open = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-label', open ? t('menu.close', 'Close menu') : t('menu.open', 'Open menu'));
+    };
+
     const setMenu = (open) => {
         menuButton.setAttribute('aria-expanded', String(open));
-        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         nav.hidden = !open;
         document.body.classList.toggle('menu-open', open);
+        syncLabel();
     };
 
     menuButton.addEventListener('click', () => setMenu(nav.hidden));
+    document.addEventListener('cofysoft:language', syncLabel);
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && !nav.hidden) {

@@ -1,6 +1,5 @@
 const PRESS_SELECTOR = '.btn, .action, .footer-social a';
 const POP_SELECTOR = 'button:not(.nav-label):not(.faq-question), .btn, .action';
-const PRESS_DURATION = 450;
 const POP_DURATION = 350;
 const NAVIGATION_DELAY = 300;
 
@@ -11,15 +10,24 @@ const leavesPage = (link, event) =>
     !(event.ctrlKey || event.metaKey || event.shiftKey);
 
 export function initInteractions() {
+    let active = null;
+
+    const release = () => {
+        active?.classList.remove('is-pressed');
+        active = null;
+    };
+
     document.addEventListener('click', (event) => {
         if (event.target.closest('a[href="#"]')) {
             event.preventDefault();
         }
 
         const pressed = event.target.closest(PRESS_SELECTOR);
+        if (pressed !== active) release();
+
         if (pressed) {
             pressed.classList.add('is-pressed');
-            setTimeout(() => pressed.classList.remove('is-pressed'), PRESS_DURATION);
+            active = pressed;
 
             if (leavesPage(pressed, event)) {
                 event.preventDefault();
