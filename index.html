@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <!-- idioma por default Ingles britanico -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cofysoft official site" data-i18n-content="meta.description">
+    <title>Cofysoft</title>
+    <link rel="icon" type="image/png" href="assets/img/Cofysoftfavicon.png">
+    <meta name="theme-color" content="#333333">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+    <link rel="stylesheet" href="assets/css/consent.css">
+    <script type="module" src="assets/js/main.js"></script>
+    <script src="assets/js/consent-manager.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header>
+        <a href="/" class="logo">
+          <!-- logo no temrinado con tamaño ya que n otengo el logo aun -->
+            <img src="assets/img/Cofysofticon.png" alt="Cofysoft Home" data-i18n-alt="logo.alt" width="100" height="30">
+        </a>
+        <button class="hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"></button>
+        <nav class="site-nav" id="main-nav" aria-label="Main" data-i18n-aria-label="nav.label" hidden>
+            <ul>
+                <li><a href="/join" data-i18n="nav.join">Join us</a></li>
+                <li>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-products" data-i18n="nav.products">Our Products</button>
+                    <div class="nav-sub" id="sub-products">
+                        <ul>
+                            <li><a href="/products/toms-workhub">Tom's Workhub</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-games" data-i18n="nav.games">Games</button>
+                    <div class="nav-sub" id="sub-games">
+                        <ul>
+                            <li><a href="/games/novastar">Novastar</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/contact" data-i18n="nav.contact">Contact us</a></li>
+                <li><a href="/about" data-i18n="nav.about">About</a></li>
+                <li>
+                    <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-languages" data-i18n="nav.languages">Languages</button>
+                  <!-- aqui los idiomas usamks xmls, ya que no voy a escribir la traduccion en el html o de otra forma -->
+                    <div class="nav-sub" id="sub-languages">
+                        <ul>
+                            <li><a href="?lang=en-GB" data-lang="en-GB" lang="en-GB" hreflang="en-GB">English (UK)</a></li>
+                            <li><a href="?lang=es" data-lang="es" lang="es" hreflang="es">Español</a></li>
+                            <li><a href="?lang=hi" data-lang="hi" lang="hi" hreflang="hi">हिन्दी</a></li>
+                            <!-- <li><a href="/pt/" lang="pt" hreflang="pt">Português</a></li> -->
+                            <!-- <li><a href="/ru/" lang="ru" hreflang="ru">Русский</a></li> -->
+                            <!-- <li><a href="/zh/" lang="zh" hreflang="zh">中文</a></li> -->
+                            <!-- <li><a href="/de/" lang="de" hreflang="de">Deutsch</a></li> -->
+                            <!-- <li><a href="/ja/" lang="ja" hreflang="ja">日本語</a></li> -->
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-i18n-aria-label="crumb.label">
+        <ol>
+            <li><span aria-current="page" data-i18n="crumb.home">Home</span></li>
+        </ol>
+    </nav>
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <h1 id="hero-title" data-reveal><span data-i18n="hero.lead">Bringing Ideas to Life</span> <span class="neon" data-i18n="hero.accent">Through Code</span></h1>
+                <p class="hero-text" data-reveal data-i18n="hero.text">We are a growing Colombian software development studio founded by a team of developers from around the world. We specialise in developing business software that streamlines everyday operations and simplifies business tasks, alongside original video games designed to entertain and engage our audience. Through technology, innovation, and creativity, we strive to develop practical software solutions and memorable gaming experiences for our users.</p>
+                <div class="hero-cta" data-reveal>
+                    <a class="btn" href="#what-we-do" data-i18n="hero.cta">Explore Our Work</a>
+                </div>
+                <div class="hero-actions" data-reveal>
+                    <a class="action action-primary" href="#what-we-do">
+                        <span data-i18n="hero.cta">Explore Our Work</span>
+                        <span class="arrow" aria-hidden="true">↓</span>
+                    </a>
+                    <a class="action action-secondary" href="/contact">
+                        <span data-i18n="hero.contact">Contact Us</span>
+                        <span class="arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="page-body">
+        <section class="process" id="what-we-do" aria-labelledby="process-title">
+            <div class="process-inner">
+                <h2 id="process-title" data-reveal><span data-i18n="process.lead">What We</span> <span class="accent" data-i18n="process.accent">Do</span></h2>
+                <p class="process-intro" data-reveal data-i18n="process.intro">We specialise in developing business software that simplifies everyday operations and original video games that deliver engaging entertainment experiences. By combining technical expertise with creative thinking, we develop our own software products to address practical business needs and bring imaginative gaming experiences to our audience.</p>
+                <ol class="process-grid">
+                    <li class="step" data-reveal>
+                        <span class="step-number">01</span>
+                        <h3 data-i18n="step.1.title">Research &amp; Discovery</h3>
+                        <p data-i18n="step.1.text">We identify everyday business challenges, explore opportunities for improvement, and develop an understanding of what makes a software product useful, practical, and effective.</p>
+                    </li>
+                    <li class="step" data-reveal>
+                        <span class="step-number">02</span>
+                        <h3 data-i18n="step.2.title">Design &amp; Planning</h3>
+                        <p data-i18n="step.2.text">We define each product's objectives, plan its core features, and select the most suitable technologies and programming languages to meet its requirements.</p>
+                    </li>
+                    <li class="step" data-reveal>
+                        <span class="step-number">03</span>
+                        <h3 data-i18n="step.3.title">Development</h3>
+                        <p data-i18n="step.3.text">We develop our own business software and video games using technologies such as HTML5, CSS, JavaScript, GDevelop, and Python, adapting our technical approach to the needs of each project.</p>
+                    </li>
+                    <li class="step" data-reveal>
+                        <span class="step-number">04</span>
+                        <h3 data-i18n="step.4.title">Testing &amp; Refinement</h3>
+                        <p data-i18n="step.4.text">We test our products, resolve issues, and refine their functionality to improve reliability, usability, and the overall experience for our users.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section class="faq" id="faq" aria-labelledby="faq-title">
+            <div class="faq-inner">
+                <p class="faq-eyebrow" data-reveal data-i18n="faq.eyebrow">Have any questions?</p>
+                <h2 id="faq-title" data-reveal data-i18n="faq.title">Frequently Asked Questions</h2>
+                <p class="faq-intro" data-reveal data-i18n="faq.intro">Learn more about our company, our business software, our original video games, and the technologies that drive our development process.</p>
+                <ul class="faq-grid">
+                    <li class="faq-item" data-reveal>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+                            <span data-i18n="faq.1.q">01. Who Are We?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-1">
+                            <div>
+                                <p data-i18n="faq.1.a">We are a growing Colombian software development studio founded by a team of developers from around the world. We create business software to simplify everyday operations and original video games to entertain our audience.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="faq-item" data-reveal>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+                            <span data-i18n="faq.2.q">02. What Do We Do?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-2">
+                            <div>
+                                <p data-i18n="faq.2.a">We develop our own software products, focusing on practical business applications and original video games that combine functionality, creativity, and engaging user experiences.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="faq-item" data-reveal>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+                            <span data-i18n="faq.3.q">03. What Types of Business Software Do We Develop?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-3">
+                            <div>
+                                <p data-i18n="faq.3.a">We focus on developing software designed to simplify business tasks, streamline everyday operations, and help make routine activities more manageable.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="faq-item" data-reveal>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+                            <span data-i18n="faq.4.q">04. Which Technologies Do We Use?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-4">
+                            <div>
+                                <p data-i18n="faq.4.a">Our primary technologies include HTML5, CSS, JavaScript, GDevelop, and Python. We also remain open to adopting additional programming languages and technologies when a project's requirements call for them.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="faq-item" data-reveal>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-5">
+                            <span data-i18n="faq.5.q">05. How Do We Approach Product Development?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-5">
+                            <div>
+                                <p data-i18n="faq.5.a">We follow a structured development process that encompasses research, planning, implementation, testing, and refinement, with an emphasis on functionality, usability, and quality.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="faq-footer" data-reveal><span data-i18n="faq.footer.lead">Have another question?</span> <a href="/contact"><span data-i18n="faq.footer.link">Get in touch with our team</span> <span aria-hidden="true">→</span></a></p>
+            </div>
+        </section>
+        <section class="vip" aria-labelledby="vip-title">
+            <div class="vip-inner">
+                <p class="vip-eyebrow" data-reveal data-i18n="vip.eyebrow">Stay informed about our latest software, games, and releases.</p>
+                <h2 id="vip-title" data-reveal data-i18n="vip.title">Exclusive Benefits. A Shared Vision.</h2>
+                <p class="vip-text" data-reveal data-i18n="vip.text">Join the Cofysoft community to enjoy exclusive membership benefits, receive updates on our latest releases and developments, and gain insight into the projects we are working on. Become part of our growing community and discover what lies ahead.</p>
+                <div data-reveal>
+                    <a class="btn" href="/vip" data-i18n="vip.cta">Become a Member</a>
+                </div>
+                <p class="vip-note" data-reveal data-i18n="vip.note">Join the Cofysoft Membership Today!</p>
+            </div>
+        </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-card">
+            <div class="footer-brand">
+                <img src="assets/img/Cofysoftlogo.png" alt="Cofysoft" height="48">
+                <p data-i18n="footer.description">Cofysoft is a growing Colombian software development studio creating websites, video games, and software applications.</p>
+                <p class="footer-phone"><span data-i18n="footer.phone">T.</span> <a href="tel:+573170961595">+57 317 0961595</a></p>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/Cofysoft-Official" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#github"></use></svg></a></li>
+                    <li><a href="https://www.tiktok.com/@cofysoftofficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#tiktok"></use></svg></a></li>
+                    <li><a href="https://www.youtube.com/@Cofysoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#youtube"></use></svg></a></li>
+                    <li><a href="https://www.instagram.com/cofysoft/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#instagram"></use></svg></a></li>
+                    <li><a href="https://x.com/cofysoft" target="_blank" rel="noopener noreferrer" aria-label="X"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#x"></use></svg></a></li>
+                    <li><a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#facebook"></use></svg></a></li>
+                </ul>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/terms" data-i18n="footer.terms">Terms of Service</a></li>
+                <li><a href="/cookie-policy" data-i18n="footer.cookies">Cookie Policy</a></li>
+                <li><a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <p class="footer-legal">Copyright © 2026 <span class="brand-name">Cofysoft</span> - <span data-i18n="footer.rights">All Rights Reserved</span> - <a href="#" id="consent-preferences" data-i18n="footer.consent">Consent Preferences</a></p>
+    </footer>
+</body>
+</html>
