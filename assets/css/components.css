@@ -1,0 +1,71 @@
+.btn,
+.action {
+    text-decoration: none;
+    transition: filter 0.2s, background-color 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid var(--tangerine);
+    border-radius: 999px;
+    background-color: var(--tangerine);
+    color: #1b1b1f;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    min-height: 120px;
+    padding: 24px;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.action-primary {
+    border-color: var(--tangerine);
+    background-color: var(--tangerine);
+    color: #1b1b1f;
+}
+
+.action-secondary {
+    border-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+}
+
+.btn:hover,
+.action-primary:hover {
+    filter: brightness(1.1);
+}
+
+.action-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn:active,
+.btn.is-pressed,
+.action-primary:active,
+.action-primary.is-pressed {
+    border-color: var(--tangerine);
+    background-color: transparent;
+    color: var(--tangerine);
+    box-shadow: 0 0 10px rgba(255, 138, 31, 0.35);
+}
+
+.action-secondary:active,
+.action-secondary.is-pressed {
+    border-color: var(--pastel-purple);
+    box-shadow: 0 0 10px rgba(195, 177, 225, 0.35);
+}
+
+.arrow {
+    font-size: 1.4rem;
+}
