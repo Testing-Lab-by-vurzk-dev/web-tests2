@@ -198,7 +198,7 @@ nav a:focus-visible,
     padding: 60px clamp(20px, 6vw, 80px);
     background:
         linear-gradient(rgba(38, 39, 44, 0.55), rgba(38, 39, 44, 0.85)),
-        url('../img/BkgCofysoft_08102026.png') center / cover no-repeat,
+        url('../img/BkgCofysoftv1.jpg') center / cover no-repeat,
         var(--hero-bg);
     overflow: hidden;
 }
