@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const menuButton = document.querySelector('.hamburger-menu');
     const nav = document.getElementById('main-nav');
 
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!target) return;
 
         const isPageLink =
-            !reducedMotion &&
             target.matches('a[href]') &&
             !target.getAttribute('href').startsWith('#') &&
             target.target !== '_blank' &&
@@ -77,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     const heroInner = document.querySelector('.hero-inner');
 
-    if (hero && heroInner && !reducedMotion) {
+    if (hero && heroInner) {
         let waiting = false;
 
         const updateHeroFade = () => {
@@ -96,8 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('.faq-question').forEach((question) => {
-        question.addEventListener('click', () => question.classList.toggle('is-open'));
+        const panel = document.getElementById(question.getAttribute('aria-controls'));
+
+        question.addEventListener('click', () => {
+            const open = !question.classList.contains('is-open');
+            question.classList.toggle('is-open', open);
+            question.setAttribute('aria-expanded', String(open));
+            if (panel) panel.classList.toggle('is-open', open);
+        });
     });
+
+    const consentLink = document.getElementById('consent-preferences');
+
+    if (consentLink) {
+        consentLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (window.ConsentManager) window.ConsentManager.reopen();
+        });
+    }
 
     document.addEventListener('cookie-settings-open', () => {
         console.log('Cookie settings opened');
