@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cofysoft official site">
     <title>Cofysoft</title>
-    <link rel="icon" type="image/png" href="assets/img/CofySoftfavicon.png">
+    <link rel="icon" type="image/png" href="assets/img/Cofysoftfavicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/consent-manager.js" defer></script>
@@ -16,7 +16,7 @@
     <header>
         <a href="/" class="logo">
           <!-- logo no temrinado con tamaño ya que n otengo el logo aun -->
-            <img src="assets/img/CofySofticon.png" alt="Cofysoft Home" width="100" height="30">
+            <img src="assets/img/Cofysofticon.png" alt="Cofysoft Home" width="100" height="30">
         </a>
         <button class="hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"></button>
         <nav id="main-nav" aria-label="Main" hidden>
@@ -26,8 +26,7 @@
                     <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-products">Our Products</button>
                     <div class="nav-sub" id="sub-products">
                         <ul>
-                            <li><a href="/products/website-development">Website Development</a></li>
-                            <li><a href="/products/game-development">Game Development</a></li>
+                            <li><a href="/products/toms-workhub">Tom's Workhub</a></li>
                         </ul>
                     </div>
                 </li>
@@ -35,8 +34,7 @@
                     <button class="nav-label" type="button" aria-expanded="false" aria-controls="sub-games">Games</button>
                     <div class="nav-sub" id="sub-games">
                         <ul>
-                            <li><a href="#">Null</a></li>
-                            <li><a href="#">Null</a></li>
+                            <li><a href="/games/novastar">Novastar</a></li>
                         </ul>
                     </div>
                 </li>
@@ -62,11 +60,15 @@
         </nav>
     </header>
     <main id="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><span aria-current="page">Home</span></li>
+            </ol>
+        </nav>
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-inner">
-                <p class="eyebrow" data-reveal><span class="glitch" data-text="Crafting Games. Creating Solutions.">Crafting Games. Creating Solutions.</span></p>
                 <h1 id="hero-title" data-reveal>Bringing Ideas to Life <span class="neon">Through Code</span></h1>
-                <p class="hero-text" data-reveal>We are a growing Colombian software development studio founded by a team of developers from around the world. We specialise in web development and game development, creating imaginative, engaging, and colourful games alongside innovative digital experiences designed to bring ideas to life.</p>
+                <p class="hero-text" data-reveal>We are a growing Colombian software development studio founded by a team of developers from around the world. We specialise in developing business software that streamlines everyday operations and simplifies business tasks, alongside original video games designed to entertain and engage our audience. Through technology, innovation, and creativity, we strive to develop practical software solutions and memorable gaming experiences for our users.</p>
                 <a class="btn" href="#what-we-do" data-reveal>Explore Our Work</a>
                 <div class="hero-actions" data-reveal>
                     <a class="action action-primary" href="#what-we-do">
@@ -82,28 +84,28 @@
         </section>
         <section class="process" id="what-we-do" aria-labelledby="process-title">
             <div class="process-inner">
-                <h2 id="process-title" data-reveal>What we <span>do?</span></h2>
-                <p class="process-intro" data-reveal>We specialise in the development of websites, video games, and software applications, utilising technologies such as GDevelop and Python. Our aim is to transform ideas into high-quality digital products, combining technical expertise with creative vision to deliver engaging gaming experiences, robust web solutions, and practical software tailored to our clients’ needs.</p>
+                <h2 id="process-title" data-reveal>What We <span>Do</span></h2>
+                <p class="process-intro" data-reveal>We specialise in developing business software that simplifies everyday operations and original video games that deliver engaging entertainment experiences. By combining technical expertise with creative thinking, we develop our own software products to address practical business needs and bring imaginative gaming experiences to our audience.</p>
                 <ol class="process-grid">
                     <li class="step" data-reveal>
                         <span class="step-number">01</span>
-                        <h3>Discovery</h3>
-                        <p>We explore your ideas, understand your needs, and identify the goals your project aims to achieve.</p>
+                        <h3>Research &amp; Discovery</h3>
+                        <p>We identify everyday business challenges, explore opportunities for improvement, and develop an understanding of what makes a software product useful, practical, and effective.</p>
                     </li>
                     <li class="step" data-reveal>
                         <span class="step-number">02</span>
-                        <h3>Planning</h3>
-                        <p>We establish the project's direction, define its core features, and select suitable technologies and tools.</p>
+                        <h3>Design &amp; Planning</h3>
+                        <p>We define each product's objectives, plan its core features, and select the most suitable technologies and programming languages to meet its requirements.</p>
                     </li>
                     <li class="step" data-reveal>
                         <span class="step-number">03</span>
                         <h3>Development</h3>
-                        <p>We bring your ideas to life through web development, game development, and software programming, with a focus on functionality, creativity, and user experience.</p>
+                        <p>We develop our own business software and video games using technologies such as HTML5, CSS, JavaScript, GDevelop, and Python, adapting our technical approach to the needs of each project.</p>
                     </li>
                     <li class="step" data-reveal>
                         <span class="step-number">04</span>
-                        <h3>Refinement</h3>
-                        <p>We test, improve, and refine our work to enhance quality, resolve issues, and deliver a better experience.</p>
+                        <h3>Testing &amp; Refinement</h3>
+                        <p>We test our products, resolve issues, and refine their functionality to improve reliability, usability, and the overall experience for our users.</p>
                     </li>
                 </ol>
             </div>
@@ -112,60 +114,97 @@
             <div class="faq-inner">
                 <p class="faq-eyebrow" data-reveal>Have any questions?</p>
                 <h2 id="faq-title" data-reveal>Frequently Asked Questions</h2>
-                <p class="faq-intro" data-reveal>Find out more about our approach to web development, game development, and software creation, from the initial concept through to development, testing, and refinement.</p>
+                <p class="faq-intro" data-reveal>Learn more about our company, our business software, our original video games, and the technologies that drive our development process.</p>
                 <ul class="faq-grid">
                     <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>01. What types of projects do you develop?</span>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+                            <span>01. Who Are We?</span>
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
+                        <div class="faq-answer" id="faq-1">
+                            <div>
+                                <p>We are a growing Colombian software development studio founded by a team of developers from around the world. We create business software to simplify everyday operations and original video games to entertain our audience.</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>02. Do you develop websites and video games for clients?</span>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+                            <span>02. What Do We Do?</span>
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
+                        <div class="faq-answer" id="faq-2">
+                            <div>
+                                <p>We develop our own software products, focusing on practical business applications and original video games that combine functionality, creativity, and engaging user experiences.</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>03. Which technologies and programming languages do you use?</span>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+                            <span>03. What Types of Business Software Do We Develop?</span>
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
+                        <div class="faq-answer" id="faq-3">
+                            <div>
+                                <p>We focus on developing software designed to simplify business tasks, streamline everyday operations, and help make routine activities more manageable.</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>04. How does your development process work?</span>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+                            <span>04. Which Technologies Do We Use?</span>
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
+                        <div class="faq-answer" id="faq-4">
+                            <div>
+                                <p>Our primary technologies include HTML5, CSS, JavaScript, GDevelop, and Python. We also remain open to adopting additional programming languages and technologies when a project's requirements call for them.</p>
+                            </div>
+                        </div>
                     </li>
                     <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>05. How long does it take to complete a project?</span>
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-5">
+                            <span>05. How Do We Approach Product Development?</span>
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
-                    </li>
-                    <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>06. How much does a website, video game, or software application cost?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                    </li>
-                    <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>07. Can you develop a project based on our specific requirements?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                    </li>
-                    <li class="faq-item" data-reveal>
-                        <button class="faq-question" type="button">
-                            <span>08. Do you provide testing, maintenance, and ongoing support?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
+                        <div class="faq-answer" id="faq-5">
+                            <div>
+                                <p>We follow a structured development process that encompasses research, planning, implementation, testing, and refinement, with an emphasis on functionality, usability, and quality.</p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
-                <p class="faq-footer" data-reveal>Can't find the answer you're looking for? <a href="/contact">Get in touch with our team <span aria-hidden="true">→</span></a></p>
+                <p class="faq-footer" data-reveal>Have another question? <a href="/contact">Get in touch with our team <span aria-hidden="true">→</span></a></p>
+            </div>
+        </section>
+        <section class="vip" aria-labelledby="vip-title">
+            <div class="vip-inner">
+                <p class="vip-eyebrow" data-reveal>Stay informed about our latest software, games, and releases.</p>
+                <h2 id="vip-title" data-reveal>Exclusive Benefits. A Shared Vision.</h2>
+                <p class="vip-text" data-reveal>Join the Cofysoft community to enjoy exclusive membership benefits, receive updates on our latest releases and developments, and gain insight into the projects we are working on. Become part of our growing community and discover what lies ahead.</p>
+                <p class="vip-note" data-reveal>Join the Cofysoft Membership Today!</p>
+                <a class="btn" href="/vip" data-reveal>Become a Member</a>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer-card" data-reveal>
+            <div class="footer-brand">
+                <img src="assets/img/CofySofticon.png" alt="Cofysoft" width="100" height="30">
+                <p>Cofysoft is a growing Colombian software development studio creating websites, video games, and software applications.</p>
+                <ul class="footer-social">
+                    <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.8V20h3.1V8.7zM5.3 3.8a1.800 1.800 0 100 3.600 1.800 1.800 0 000-3.600zM20.200 13.300c0-3-1.600-4.800-4.100-4.800-1.400 0-2.300.7-2.700 1.400V8.700h-3.100V20h3.100v-6.100c0-1.600.8-2.500 2-2.500s1.800.9 1.800 2.500V20h3.100l-.1-6.700z"/></svg></a></li>
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.600" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16.800" cy="7.200" r="1.200"/></svg></a></li>
+                    <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M21.600 7.200a2.500 2.500 0 00-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 002.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 001.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 001.800-1.800C22 15.200 22 12 22 12s0-3.200-.4-4.800zM10 15V9l5.200 3L10 15z"/></svg></a></li>
+                    <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.800 3h3.100l-6.700 7.700L22 21h-6.100l-4.800-6.200L5.600 21H2.500l7.200-8.200L2 3h6.300l4.300 5.700L17.800 3zm-1.100 16.200h1.700L7.300 4.700H5.500l11.200 14.500z"/></svg></a></li>
+                    <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M13.500 21v-7.500h2.600l.4-3h-3V8.600c0-.9.3-1.500 1.600-1.500h1.600V4.400c-.3 0-1.200-.1-2.300-.1-2.300 0-3.900 1.400-3.900 4v2.200H8v3h2.600V21h2.900z"/></svg></a></li>
+                </ul>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/cookie-policy">Cookie Policy</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <p class="footer-legal">Copyright © 2026 <span>Cofysoft</span> - All Rights Reserved - <a href="#" id="consent-preferences">Consent Preferences</a></p>
+    </footer>
 </body>
 </html>
